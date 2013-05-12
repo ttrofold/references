@@ -1,0 +1,9 @@
+.TableContentPanel.tabular {
+    width: 100%;
+    text-align: center;
+}
+
+.TableStructurePanel.modalLink {
+    cursor: pointer;
+    color: blue;
+}

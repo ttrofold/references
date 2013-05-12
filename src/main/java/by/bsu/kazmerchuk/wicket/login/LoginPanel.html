@@ -1,0 +1,15 @@
+<wicket:panel>
+    <span wicket:id="message"></span>
+
+    <form wicket:id="loginForm">
+        <div class="formPair">
+            <span><wicket:message key="login.field"/></span>
+            <input type="text" wicket:id="loginTextField"/></div>
+        <div class="formPair">
+            <span><wicket:message key="login.password"/></span>
+            <input type="password" wicket:id="passwordTextField"/></div>
+        <div class="formSubmit">
+            <input type="submit" wicket:id="submit" wicket:message="value:login.submit"/>
+        </div>
+    </form>
+</wicket:panel>

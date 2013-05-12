@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="webAppContext" class="by.bsu.kazmerchuk.CustomWebAppContext">
+        <property name="war" value="src/main/webapp"/>
+        <property name="server" ref="server"/>
+        <property name="contextPath" value="/"/>
+    </bean>
+
+    <bean id="server" class="org.eclipse.jetty.server.Server"
+            destroy-method="stop">
+        <property name="connectors">
+            <list>
+                <bean class="org.eclipse.jetty.server.ServerConnector">
+                    <constructor-arg ref="server"/>
+                    <property name="port" value="8080"/>
+                    <property name="idleTimeout" value="3600000"/>
+                </bean>
+            </list>
+        </property>
+        <property name="handler">
+            <bean class="org.eclipse.jetty.server.handler.HandlerCollection">
+                <property name="handlers">
+                    <list>
+                        <ref bean="webAppContext"/>
+                    </list>
+                </property>
+            </bean>
+        </property>
+    </bean>
+</beans>

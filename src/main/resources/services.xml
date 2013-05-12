@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="loginService" autowire="byName"
+          class="by.bsu.kazmerchuk.services.LoginServiceImpl"/>
+
+    <bean name="tableDefService" autowire="byName"
+          class="by.bsu.kazmerchuk.services.TableDefServiceImpl"/>
+
+    <bean name="columnDefService" autowire="byName"
+          class="by.bsu.kazmerchuk.services.ColumnDefServiceImpl"/>
+
+    <bean name="redirectService" autowire="byName"
+          class="by.bsu.kazmerchuk.services.RedirectServiceImpl"/>
+
+    <bean name="fetchTableService" autowire="byName"
+          class="by.bsu.kazmerchuk.services.FetchTableServiceImpl"/>
+</beans>
